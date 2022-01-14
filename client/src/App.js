@@ -6,14 +6,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./UI/Placement.css";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Homepage/Home";
 import About from "./components/AboutPage/About";
 import Placement from "./components/Placements/Placements";
 import Courses from "./components/Courses/Courses";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
-import NavbarMobile from "./components/Navbar/NavbarMobile";
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
         <Route path="/signin" exact component={Login} />
         <Route path="/ptcell" exact component={Placement} />
         <Route path="/courses" exact component={Courses} />
-        <Route path="/mobilenav" exact component={NavbarMobile} />
       </Switch>
     </Router>
   );
