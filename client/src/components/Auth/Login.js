@@ -44,36 +44,32 @@ const Login = () => {
   };
   return (
     <>
-      {isAuth() ? (
-        <Redirect to="/zmailer/dashboard" />
-      ) : (
-        <Container>
-          <Sidebar />
-          <FormContainer>
-            <Title>Login</Title>
-            <Input
-              type="email"
-              placeholder="Email..."
-              onChange={(e) => setLoginEmail(e.target.value)}
-              value={loginEmail}
-            />
-            <Input
-              type="password"
-              placeholder="Password..."
-              onChange={(e) => setLoginPassword(e.target.value)}
-              value={loginPassword}
-            />
-            <a className="forgot" href="www.facebook.com">
-              Forgot Password?
-            </a>
-            <Button onClick={loginFormHandler}>Login</Button>
-            <div className="signup_link">
-              Not a member?
-              <Link to="/register">Signup</Link>
-            </div>
-          </FormContainer>
-        </Container>
-      )}
+      <Container>
+        <Sidebar />
+        <FormContainer>
+          <Title>Login</Title>
+          <Input
+            type="email"
+            placeholder="Email..."
+            onChange={(e) => setLoginEmail(e.target.value)}
+            value={loginEmail}
+          />
+          <Input
+            type="password"
+            placeholder="Password..."
+            onChange={(e) => setLoginPassword(e.target.value)}
+            value={loginPassword}
+          />
+          <a className="forgot" href="www.facebook.com">
+            Forgot Password?
+          </a>
+          <Button onClick={loginFormHandler}>Login</Button>
+          <div className="signup_link">
+            Not a member?
+            <Link to="/register">Signup</Link>
+          </div>
+        </FormContainer>
+      </Container>
     </>
   );
 };

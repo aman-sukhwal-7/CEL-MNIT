@@ -24,7 +24,7 @@ export const Menu = styled.div`
   padding: 20px 0;
   transition: 0.5s ease-in-out all;
   transform: ${(props) =>
-    props.clicked ? "translateX(100%)" : "translateX(0)"};
+    props.clicked ? "translateX(0)" : "translateX(100%)"};
 
   @media only screen and (min-width: 800px) {
     position: initial;

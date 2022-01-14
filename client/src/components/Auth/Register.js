@@ -44,39 +44,35 @@ const Register = () => {
   };
   return (
     <>
-      {isAuth() ? (
-        <Redirect to="/login" />
-      ) : (
-        <Container>
-          <Sidebar />
-          <FormContainer>
-            <Title>Register</Title>
-            <Input
-              type="text"
-              placeholder="Name..."
-              onChange={(e) => setRegisterName(e.target.value)}
-              value={registerName}
-            />
-            <Input
-              type="email"
-              placeholder="Email..."
-              onChange={(e) => setRegisterEmail(e.target.value)}
-              value={registerEmail}
-            />
-            <Input
-              type="password"
-              placeholder="Password..."
-              onChange={(e) => setRegisterPassword(e.target.value)}
-              value={registerPassword}
-            />
-            <Button onClick={registerFormHandler}>SignUp</Button>
-            <div className="signup_link">
-              Already a member?
-              <Link to="/login">Login</Link>
-            </div>
-          </FormContainer>
-        </Container>
-      )}
+      <Container>
+        <Sidebar />
+        <FormContainer>
+          <Title>Register</Title>
+          <Input
+            type="text"
+            placeholder="Name..."
+            onChange={(e) => setRegisterName(e.target.value)}
+            value={registerName}
+          />
+          <Input
+            type="email"
+            placeholder="Email..."
+            onChange={(e) => setRegisterEmail(e.target.value)}
+            value={registerEmail}
+          />
+          <Input
+            type="password"
+            placeholder="Password..."
+            onChange={(e) => setRegisterPassword(e.target.value)}
+            value={registerPassword}
+          />
+          <Button onClick={registerFormHandler}>SignUp</Button>
+          <div className="signup_link">
+            Already a member?
+            <Link to="/login">Login</Link>
+          </div>
+        </FormContainer>
+      </Container>
     </>
   );
 };

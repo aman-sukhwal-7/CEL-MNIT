@@ -26,6 +26,9 @@ export const Sidebar = styled.div`
   background-image: url(${SidebarImage});
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -38,6 +41,9 @@ export const FormContainer = styled.form`
   padding: 20px;
   align-items: stretch;
   justify-content: space-evenly;
+  @media (max-width: 800px) {
+    width: 80vw;
+  }
 `;
 export const AvatarImage = styled.img`
   display: block;
@@ -55,8 +61,10 @@ export const Button = styled.button`
   background-color: hsl(208, 100%, 54%);
   color: white;
   border-radius: 5px;
+  opacity: 0.6;
+  transition: 0.3s;
   &:hover {
-    background-color: hsl(270, 98%, 52%);
+    opacity: 1;
   }
 `;
 export const Title = styled.h1`

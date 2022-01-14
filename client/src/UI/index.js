@@ -52,8 +52,12 @@ export const Button = styled.button`
   padding: 10px;
   background-color: hsl(257, 69%, 47%);
   border: none;
-  color: white;
   border-radius: 5px;
+  opacity: 1;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const ButtonOutline = styled.button`

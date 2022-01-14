@@ -17,9 +17,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const listItemClickHandler = () => {
+    console.log(isOpen);
     setIsOpen(false);
   };
-
+  console.log(isOpen);
   return (
     <>
       <NavbarContainer>
