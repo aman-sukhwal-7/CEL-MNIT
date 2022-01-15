@@ -10,8 +10,15 @@ import {
 } from "./AuthStyles";
 import { Link } from "react-router-dom";
 import { isAuth } from "./Helpers";
+import { useSpring, animated } from "react-spring";
 
 const Login = () => {
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 200,
+  });
+
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -43,7 +50,7 @@ const Login = () => {
     // }
   };
   return (
-    <>
+    <animated.div style={props}>
       <Container>
         <Sidebar />
         <FormContainer>
@@ -70,7 +77,7 @@ const Login = () => {
           </div>
         </FormContainer>
       </Container>
-    </>
+    </animated.div>
   );
 };
 

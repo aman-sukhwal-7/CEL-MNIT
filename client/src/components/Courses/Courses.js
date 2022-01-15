@@ -9,6 +9,8 @@ import joseImg from "./assets/jose.jpeg";
 import courseOne from "./assets/course-one.jpeg";
 import courseTwo from "./assets/course-two.jpeg";
 
+import { useSpring, animated } from "react-spring";
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -33,8 +35,14 @@ const responsive = {
 };
 
 const Courses = () => {
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 200,
+  });
+
   return (
-    <>
+    <animated.div style={props}>
       <div class="hero-image"></div>
       <div className="courses-container">
         <h1>A broad selection of courses</h1>
@@ -72,7 +80,7 @@ const Courses = () => {
           ))}
         </div>
       </div>
-    </>
+    </animated.div>
   );
 };
 

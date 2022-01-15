@@ -1,10 +1,16 @@
 import React from "react";
 import PlacementList from "./PlacementList";
 import SearchInput from "./SearchInput";
+import { useSpring, animated } from "react-spring";
 
 const Placements = () => {
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 200,
+  });
   return (
-    <div className="placement-section">
+    <animated.div className="placement-section" style={props}>
       <div className="placement-subsection">
         <SearchInput />
         <div>
@@ -15,7 +21,7 @@ const Placements = () => {
       <div>
         <PlacementList />
       </div>
-    </div>
+    </animated.div>
   );
 };
 

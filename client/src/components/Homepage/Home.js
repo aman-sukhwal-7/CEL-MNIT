@@ -8,10 +8,16 @@ import Footer from "./Footer/Footer";
 import Testimonials from "./Testimonials/Testimonials";
 import JobPosting from "./JobPosting/JobPosting";
 import LearnMore from "./LearnMore/LearnMore";
+import { useSpring, animated } from "react-spring";
 
 const Home = () => {
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 200,
+  });
   return (
-    <>
+    <animated.div style={props}>
       <LearnMore />
       <JobPosting />
       <AboutHome />
@@ -21,7 +27,7 @@ const Home = () => {
       <Companies />
       <Courses />
       <Footer />
-    </>
+    </animated.div>
   );
 };
 
