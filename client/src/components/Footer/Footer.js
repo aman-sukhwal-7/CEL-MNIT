@@ -6,12 +6,8 @@ import Social from "./Social";
 import { Phone } from "@mui/icons-material";
 import FollowUs from "./FollowUs";
 
-const Container = styled.div`
-  background-color: hsla(258, 69%, 47%, 0.08);
-  padding: 20px;
-`;
-
 const FooterContainer = styled.div`
+  background-color: hsla(258, 69%, 47%, 0.08);
   display: grid;
   grid-template-columns: 1rem 1fr 1fr 1fr 1rem;
   justify-content: space-between;
@@ -22,6 +18,8 @@ const FooterContainer = styled.div`
 `;
 
 const FooterInfo = styled.div`
+  padding: 10px 0;
+  margin: 10px 0;
   grid-column: 2/3;
   @media (max-width: 800px) {
     grid-row: 1/2;
@@ -44,7 +42,9 @@ const FooterMenu = styled.div`
     grid-column: 2/3;
   }
 `;
-const Info = styled.p``;
+const Info = styled.p`
+  margin-bottom: 15px;
+`;
 
 const ListContainerFooter = styled(ListContainer)`
   padding: 10px;
@@ -66,14 +66,14 @@ const Footer = (props) => {
     <>
       <FooterContainer>
         <FooterInfo>
-          <img src={logo} alt="Footer" />
           <Info>
-            cel enables students in being capable to develop production grade
+            Cel enables students in being capable to develop production grade
             application by availing full stack development, Soft skills,
             Analytics and project management skills to get a core software job
             in the Industry.
           </Info>
-          <Button>Apply Now</Button>
+          <Button style={{ marginBottom: "15px" }}>Apply Now</Button>
+          <img src={logo} alt="Footer" style={{ display: "block" }} />
         </FooterInfo>
         <FooterMenu>
           <ListContainerFooter>

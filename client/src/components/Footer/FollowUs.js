@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Social from "./Social";
 
 const Container = styled.div`
+  background-color: hsla(258, 69%, 47%, 0.08);
   display: grid;
   grid-template-columns: 1rem 1fr 1fr 1rem;
   padding: 10px;
