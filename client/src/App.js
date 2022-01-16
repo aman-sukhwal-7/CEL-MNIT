@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
 import AllRoute from "./Routes";
 
 import "./App.css";
@@ -23,6 +25,7 @@ function App() {
         <Switch>
           <Route component={AllRoute} />
         </Switch>
+        <Footer />
       </Router>
     </animated.div>
   );

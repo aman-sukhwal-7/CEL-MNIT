@@ -10,6 +10,13 @@ import {
 
 const Container = styled.div`
   display: flex;
+  grid-column: 3/4;
+  justify-content: flex-end;
+  @media (max-width: 800px) {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    justify-content: flex-start;
+  }
 `;
 const Link = styled.a`
   text-decoration: none;

@@ -77,3 +77,13 @@ export const Logo = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 `;
+
+export const ListContainer = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
+
+export const ListItem = styled.li`
+  list-style: none;
+  cursor: pointer;
+`;

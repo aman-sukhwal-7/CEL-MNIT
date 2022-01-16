@@ -15,41 +15,38 @@ import { Button } from "../../UI/index";
 import { useSpring } from "react-spring";
 import styled from "styled-components";
 
-const DropDownContainer = styled("div")`
-  width: 10.5em;
-  margin: 0 auto;
-`;
-
-const DropDownHeader = styled("div")`
-  margin-bottom: 0.8em;
-  padding: 0.4em 2em 0.4em 1em;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: #3faffa;
-  background: #ffffff;
-`;
-
-const DropDownListContainer = styled("div")``;
-
 const DropDownList = styled("ul")`
-  padding: 0;
-  margin: 0;
-  padding-left: 1em;
-  background: #ffffff;
-  border: 2px solid #e5e5e5;
-  box-sizing: border-box;
-  color: #3faffa;
-  font-size: 1.3rem;
-  font-weight: 500;
-  &:first-child {
-    padding-top: 0.8em;
+  position: relative;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  margin-top: 5px;
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    padding-top: 10px;
   }
 `;
 
-const ListItem = styled("li")`
+const DropDownListItem = styled("li")`
   list-style: none;
-  margin-bottom: 0.8em;
+  cursor: pointer;
+  margin-bottom: 5px;
 `;
 
 const Navbar = () => {
@@ -64,6 +61,7 @@ const Navbar = () => {
   const listItemClickHandler = () => {
     console.log(isOpen);
     setIsOpen(false);
+    setIsOpenDropDown(false);
   };
   console.log(isOpen);
 
@@ -83,26 +81,32 @@ const Navbar = () => {
             <Link to="/about" onClick={listItemClickHandler}>
               <NavbarListItem>About</NavbarListItem>
             </Link>
-            <Link to="/skills" onClick={listItemClickHandler}>
-              <NavbarListItem>Skills</NavbarListItem>
+            <Link to="/courses" onClick={listItemClickHandler}>
+              <NavbarListItem>Courses</NavbarListItem>
+            </Link>
+            <Link to="/blog" onClick={listItemClickHandler}>
+              <NavbarListItem>Blog</NavbarListItem>
             </Link>
             <Link to="/contact" onClick={listItemClickHandler}>
               <NavbarListItem>Contact</NavbarListItem>
             </Link>
-            <Link to="/ptcell" onClick={listItemClickHandler}>
-              <NavbarListItem>
-                PTCell+
-                {isOpenDropDown && (
-                  <DropDownListContainer>
-                    <DropDownList>
-                      <ListItem>Mangoes</ListItem>
-                      <ListItem>Apples</ListItem>
-                      <ListItem>Oranges</ListItem>
-                    </DropDownList>
-                  </DropDownListContainer>
-                )}
-              </NavbarListItem>
-            </Link>
+            <NavbarListItem>
+              <span onClick={toggling}>PTCell+</span>
+              {isOpenDropDown && (
+                <DropDownList>
+                  <Link to="/mentorship">
+                    <DropDownListItem onClick={listItemClickHandler}>
+                      Mentorship
+                    </DropDownListItem>
+                  </Link>
+                  <Link to="/vlog">
+                    <DropDownListItem onClick={listItemClickHandler}>
+                      Vlog
+                    </DropDownListItem>
+                  </Link>
+                </DropDownList>
+              )}
+            </NavbarListItem>
           </NavbarListContainer>
           <Button>
             <Link to="/register" onClick={listItemClickHandler}>

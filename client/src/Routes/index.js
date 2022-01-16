@@ -17,7 +17,7 @@ const AllRoute = () => {
       <Route path="/register" exact component={Register} />
       <Route path="/login" exact component={Login} />
       {/* <Route path="/forgot-password" exact component={ForgotPassword} /> */}
-      <Route path="/ptcell" exact component={Placement} />
+      <Route path="/mentorship" exact component={Placement} />
       <Route path="/courses" exact component={Courses} />
     </>
   );

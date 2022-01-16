@@ -38,6 +38,7 @@ export const Menu = styled.div`
 `;
 
 export const NavbarListContainer = styled.ul`
+  align-items: flex-start;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -49,14 +50,17 @@ export const NavbarListContainer = styled.ul`
 `;
 
 export const NavbarListItem = styled.li`
-  padding: 5px 0;
+  position: relative;
+  align-items: flex-start;
+  margin: 15px;
+  width: 10rem;
   &:hover {
     color: hsl(258.07, 69.17%, 47.06%);
   }
   @media only screen and (min-width: 800px) {
     padding: 0 10px;
+    margin: 5px;
     display: flex;
-    align-items: center;
     justify-content: center;
     width: max-content;
   }
